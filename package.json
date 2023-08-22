@@ -9,6 +9,8 @@
   "author": "Fernando de Abreu",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^12.17.4"
+    "@cypress/xpath": "^2.0.3",
+    "cypress": "^12.17.4",
+    "cypress-xpath": "^2.0.1"
   }
 }
