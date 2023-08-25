@@ -4,7 +4,9 @@
 describe("Test Contaact Us From via Automation test Store", () =>  {
     it ("Shoulb be able to submit a successful submission via constact us form", () => {
         cy.visit('https://automationteststore.com/');
-        cy.xpath("//a[contains(@href, 'contact')]").click();
+        cy.xpath("//a[contains(@href, 'contact')]").click().then(function(linktext){
+            cy.log("Clicked on link using text: " + linktext.text())
+        });
         cy.get('.info_links_footer > :nth-child(5) > a').click ();
         cy.get('#ContactUsFrm_first_name').type ("Mark");
         cy.get('#ContactUsFrm_email').type ("mark_ramone@gmmail.com");
