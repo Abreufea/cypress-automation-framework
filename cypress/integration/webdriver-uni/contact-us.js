@@ -13,7 +13,9 @@ describe("Test Contaact Us From via WebdriverUni", () =>  {
      cy.get('h1').should('have.text', 'Thank You for your Message!')    
 });
 it ("Shoulb not be able to submit a successful submission via constact us form as all fields are required", () => {
-    cy.visit ("https://webdriveruniversity.com/Contact-Us/contactus.html");
+      //cy.visit("http://www.webdriveruniversity.com/Contact-Us/contactus.html");
+      cy.visit("http://www.webdriveruniversity.com")
+      cy.get('#contact-us').invoke('removeAttr', 'target').click({force:true})
     cy.get('[name="first_name"]').type("joe");
     cy.get('[name="last_name"]').type("Hermano");
     cy.get('textarea.feedback-input').type("My first test alone...:)");
