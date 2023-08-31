@@ -19,7 +19,7 @@ describe("Handle js alerts", () => {
 
         cy.get('#button4').click()
 
-        cy.on('window:alert', (str) => {
+        cy.on('window:confirm', (str) => {
             return true;
         })
         cy.get('#confirm-alert-text').contains('You pressed OK!')
