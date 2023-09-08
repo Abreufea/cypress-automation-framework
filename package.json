@@ -4,15 +4,20 @@
   "description": "Cypress Automation Framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "triggerAllTests-headless": "npx cypress run",
+    "triggerAllTests-headed": "npx cypress run --headed",
+    "triggerAllTests-chrome": "npx cypress run --browser chrome",
+    "triggerAllTests-dashboard": "npx cypress run --record --key 3025d595-10bc-4aad-91ed-5802e5896b45",
+    "triggerAllTests-webdriveruni": "npx cypress run --spec cypress/e2e/webdriver-uni/*"
   },
   "author": "Fernando de Abreu",
   "license": "ISC",
   "devDependencies": {
     "@cypress/xpath": "^2.0.3",
     "cypress": "^13.1.0",
-    "cypress-file-upload": "^5.0.8",
-    "cypress-xpath": "^2.0.1"
+    "cypress-multi-reporters": "^1.6.3",
+    "cypress-xpath": "^2.0.1",
+    "mocha-junit-reporter": "^2.2.1"
   },
   "dependencies": {
     "chai": "^4.3.7"
