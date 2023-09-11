@@ -11,7 +11,10 @@
     "triggerAllTests-webdriveruni": "npx cypress run --spec cypress/e2e/webdriver-uni/*",
     "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
     "delete-junit-report": "rm -rf cypress/results/junit/results.xml",
-    "delete-results": "rm -rf cypress/results/* || true"
+    "delete-results": "rm -rf cypress/results/* || true",
+    "mochawesome-merge": "npx mochawesome-merge cy… marge mochawesome.json",
+    "delete-mochawesome-report": "rm -rf mochawesome-report/* || true",
+    "cypress-regression-pack": "npm run delete-results &…m run mochawesome-merge"
   },
   "author": "Fernando de Abreu",
   "license": "ISC",
@@ -28,5 +31,5 @@
   "dependencies": {
     "chai": "^4.3.7",
     "cypress-file-upload": "^5.0.8"
-  }
+  }   
 }

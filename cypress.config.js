@@ -1,9 +1,25 @@
+const { Console } = require("console");
 const { defineConfig } = require("cypress");
+const fs = require('fs-extra');
+const path = require('path');
+
+function getConfigurationByFile(file) {
+  const pathToConfigFile = path.resolve('cypress\\config', `${file}.json`);
+  if(!fs.existsSync(pathToConfigFile)) {
+    console.log("No custom config file found.");
+    return{};
+  }
+
+  return fs.readJson(pathToConfigFile)
+}
 
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
+      const file = config.env.configFile || ''
+
+      return getConfigurationByFile(file)
     },
     specPattern: "cypress/integration/**/*.{js,jsx,ts,tsx,feature}",
     excludeSpecPattern: "cypress/e2e/other/*.js",
@@ -21,6 +37,10 @@ module.exports = defineConfig({
     reporter: 'cypress-multi-reporters',
     reporterOptions: {
       configFile: 'reporter-config.json',
+    },
+    retries: {
+      runMode:0,
+      openMode:1
     },
     env: {
       first_name: "Sarah",
