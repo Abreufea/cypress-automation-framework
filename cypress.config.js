@@ -12,10 +12,7 @@ function getConfigurationByFile(file) {
 
   return fs.readJson(pathToConfigFile)
 }
-module.exports = {
-  projectId: "xh3xh8",
-  // ...rest of the Cypress project config
-}
+
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
@@ -23,6 +20,9 @@ module.exports = defineConfig({
       const file = config.env.configFile || ''
 
       return getConfigurationByFile(file)
+    
+   
+      
     },
     specPattern: "cypress/integration/**/*.{js,jsx,ts,tsx,feature}",
     excludeSpecPattern: "cypress/e2e/other/*.js",
@@ -33,8 +33,8 @@ module.exports = defineConfig({
     pageLoadTimeout: 120000,
     screenshotOnRunFailure: true,
     trashAssetsBeforeRuns: true,
-    video: false,
-    videoUploadOnPasses: false,
+    video: true,
+    videoUploadOnPasses: true,
     viewportHeight: 1080,
     viewportWidth: 1920,
     reporter: 'cypress-multi-reporters',
@@ -51,4 +51,5 @@ module.exports = defineConfig({
     }
     
   },
+  projectId: "4eefcm"
 });
