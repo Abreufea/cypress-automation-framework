@@ -12,7 +12,10 @@ function getConfigurationByFile(file) {
 
   return fs.readJson(pathToConfigFile)
 }
-
+module.exports = {
+  projectId: "xh3xh8",
+  // ...rest of the Cypress project config
+}
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
@@ -46,5 +49,6 @@ module.exports = defineConfig({
       first_name: "Sarah",
       webdriveruni_homepage: "http://www.webdriveruniversity.com"
     }
+    
   },
 });

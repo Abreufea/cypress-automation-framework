@@ -7,7 +7,7 @@
     "triggerAllTests-headless": "npx cypress run",
     "triggerAllTests-headed": "npx cypress run --headed",
     "triggerAllTests-chrome": "npx cypress run --browser chrome",
-    "triggerAllTests-dashboard": "npx cypress run --record --key 3025d595-10bc-4aad-91ed-5802e5896b45",
+    "triggerAllTests-dashboard": "npx cypress run --record --key 28fbb57f-446f-4d60-b6ce-7607b2f50467",
     "triggerAllTests-webdriveruni": "npx cypress run --spec cypress/integration/webdriver-uni/*",
     "triggerAllTests-autoTestStore": "npx cypress run --spec cypress/integration/automation-test-store/*",
     "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
@@ -23,7 +23,7 @@
   "license": "ISC",
   "devDependencies": {
     "@cypress/xpath": "2.0.3",
-    "cypress": "13.1.0",
+    "cypress": "^13.2.0",
     "cypress-multi-reporters": "1.6.3",
     "cypress-xpath": "2.0.1",
     "mocha-junit-reporter": "2.2.1",
@@ -34,5 +34,5 @@
   "dependencies": {
     "chai": "4.3.7",
     "cypress-file-upload": "5.0.8"
-  }   
+  }
 }
