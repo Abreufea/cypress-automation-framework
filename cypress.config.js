@@ -25,7 +25,7 @@ module.exports = defineConfig({
       
     },
     specPattern: "cypress/integration/**/*.{js,jsx,ts,tsx,feature}",
-    excludeSpecPattern: "cypress/e2e/other/*.js",
+    // excludeSpecPattern: "cypress/e2e/other/*.js",
     baseUrl: "http://www.webdriveruniversity.com",
     chromeWebSecurity: false,
     experimentalSessionAndOrigin: true,
